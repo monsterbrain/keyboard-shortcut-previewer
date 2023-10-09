@@ -29,7 +29,7 @@ body {
 
 #keyboard {
   width: 1215px;
-  height: 480px;
+  height: 420px;
   padding: 16px 0 0 16px;
   margin: 0;
   background-repeat: no-repeat;
@@ -174,7 +174,7 @@ ol li span {
 }
 #lightswitch span {
   display: inline;
-  font-size: 4em;
+  font-size: 2em;
   line-height: inherit;
   vertical-align: middle;
   color: #444;

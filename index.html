@@ -7,12 +7,14 @@
     <meta name="description" content="Keyboard Shortcut preview with key highlights" />
     <meta name="author" content="Monster Brain" />
 
+    <link rel="stylesheet" href="css/ui.css" />
     <link rel="stylesheet" href="css/stijl.css" />
 
     <link rel="stylesheet" href="http://mcdlr.com/css/promiscuous.css" />
     <link rel="image_src" href="http://mcdlr.com/img/thumbs/key-sheet.jpg" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/html2canvas.ekoopman.js"></script>
   </head>
 
   <body>
@@ -106,7 +108,21 @@
       </ol>
     </div>
 
+    <!-- HTML !-->
+    <button id="save-img-btn" class="button-6" role="button">Save Image</button>
     <div id="lightswitch" class="key"><span>&#183;</span> light</div>
+
+    <div id="img-preview-div">
+      <h2><i class="icon icon-photo"></i> Generated Image - (<b>Right Click -> 'Save image as' to download image</b> as png)</h2>
+      <!-- <p id="gen-img-size-label">w,h = [0px, 0px]</p> -->
+      <div id="img-out-preview">
+      </div>
+      <!--
+        used for testing resized and non resized images 
+        <div id="img-out-preview-resized">
+      </div> -->
+      </canvas>
+    </div>
 
     <div id="moribus">
       <script src="js/gedrag.js"></script>
