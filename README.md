@@ -7,11 +7,12 @@ A keyboard shortcut previewer which lets you highlight the shortcut.
 
 ## Keyboard css design credits - [DrummerHead](https://github.com/DrummerHead/HTML-Keyboard)
 
-Use a Screenshot tool to make the screenshot (for example ShareX in Windows) of the page and use it in your videos, webpage or whatever.
+Features v1.0
+- Save Mechanism added (screenshot will be shown which you can save)
 
 TO-BE-DO-BE-DOO
-- Currently only macOS keyboard is added.
-- No screenshot saving mechanism
+- Currently only macOS keyboard is added. Windows Keyboard also please.
 - need to make a quiz game on learning keyboard shortcuts from this
+- No screenshot saving mechanism - DONE
 
 Feel free to suggest ideas
