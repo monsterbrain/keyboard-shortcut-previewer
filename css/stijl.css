@@ -165,6 +165,34 @@ ol li span {
   background-color: #5b50f1;
 }
 
+/* Theme Classes */
+.theme-blue li,
+.theme-blue .key {
+  background-color: #1e3a8a;
+}
+
+.theme-blue .pressed {
+  background-color: #3b82f6;
+}
+
+.theme-green li,
+.theme-green .key {
+  background-color: #14532d;
+}
+
+.theme-green .pressed {
+  background-color: #22c55e;
+}
+
+.theme-orange li,
+.theme-orange .key {
+  background-color: #9a3412;
+}
+
+.theme-orange .pressed {
+  background-color: #f97316;
+}
+
 #lightswitch {
   width: auto;
   font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
