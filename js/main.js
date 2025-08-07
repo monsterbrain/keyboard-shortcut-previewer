@@ -66,4 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 250);
     });
   });
+
+  // Theme switching functionality
+  const themeClassicBtn = document.getElementById("theme-classic");
+  const themeTransparentBtn = document.getElementById("theme-transparent");
+  const mainElement = document.getElementById("main");
+
+  themeClassicBtn.addEventListener("click", function() {
+    mainElement.classList.remove("semi-transparent");
+    themeClassicBtn.style.backgroundColor = "#5b50f1";
+    themeClassicBtn.style.color = "#fff";
+    themeTransparentBtn.style.backgroundColor = "#FFFFFF";
+    themeTransparentBtn.style.color = "rgba(0, 0, 0, 0.85)";
+  });
+
+  themeTransparentBtn.addEventListener("click", function() {
+    mainElement.classList.add("semi-transparent");
+    themeTransparentBtn.style.backgroundColor = "#5b50f1";
+    themeTransparentBtn.style.color = "#fff";
+    themeClassicBtn.style.backgroundColor = "#FFFFFF";
+    themeClassicBtn.style.color = "rgba(0, 0, 0, 0.85)";
+  });
+
+  // Set default theme (classic)
+  themeClassicBtn.style.backgroundColor = "#5b50f1";
+  themeClassicBtn.style.color = "#fff";
 });
