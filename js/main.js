@@ -1,61 +1,69 @@
-$("document").ready(function () {
-  $("li").click((e) => {
-    var btn = $(e.target);
-    if (btn.hasClass("pressed")) {
-      btn.removeClass("pressed");
-    } else {
-      btn.addClass("pressed");
-    }
-    console.log("clicked on li" + e);
+document.addEventListener("DOMContentLoaded", function () {
+  // Add click handler for keyboard keys
+  const keyboardLis = document.querySelectorAll("#keyboard li");
+  keyboardLis.forEach(li => {
+    li.addEventListener("click", (e) => {
+      const btn = e.target.closest("li");
+      if (btn.classList.contains("pressed")) {
+        btn.classList.remove("pressed");
+      } else {
+        btn.classList.add("pressed");
+      }
+      console.log("clicked on li", e);
+    });
   });
 
-  $("#shortcut-info").on("input", function () {
-    $("#shortcut-title").text($("#shortcut-info").val());
+  // Add input handler for shortcut info
+  const shortcutInfo = document.getElementById("shortcut-info");
+  const shortcutTitle = document.getElementById("shortcut-title");
+  shortcutInfo.addEventListener("input", function () {
+    shortcutTitle.textContent = shortcutInfo.value;
   });
 
-  $("#img-preview-div").hide();
-  $("#save-img-btn").click(function () {
-    var e = document.getElementById("main");
-    var e_width = e.offsetWidth;
-    var e_height = e.offsetHeight;
-    var e_x_offset = window.scrollX + e.getBoundingClientRect().left;
-    var e_y_offset = window.scrollY + e.getBoundingClientRect().top;
+  // Hide preview div initially
+  const imgPreviewDiv = document.getElementById("img-preview-div");
+  imgPreviewDiv.style.display = "none";
 
-    html2canvas(e, {
+  // Add save image handler
+  const saveImgBtn = document.getElementById("save-img-btn");
+  saveImgBtn.addEventListener("click", function () {
+    const mainElement = document.getElementById("main");
+    const e_width = mainElement.offsetWidth;
+    const e_height = mainElement.offsetHeight;
+    const e_x_offset = window.scrollX + mainElement.getBoundingClientRect().left;
+    const e_y_offset = window.scrollY + mainElement.getBoundingClientRect().top;
+
+    html2canvas(mainElement, {
       dpi: 192,
       scale: 1,
       backgroundColor: null,
-      // width: e_width,
-      // height: e_height,
-      // x: e_x_offset,
-      // y: e_y_offset
     }).then((canvas) => {
-      //document.body.appendChild(canvas)
-      $("#img-preview-div").show();
-      var base64image = canvas.toDataURL("image/png");
+      imgPreviewDiv.style.display = "block";
+      const base64image = canvas.toDataURL("image/png");
 
-      let $imgDiv = $('<img src="' + base64image + '" width = "640"/>');
-      $("#img-out-preview").empty();
-      $("#img-out-preview").append($imgDiv);
+      const imgElement = document.createElement("img");
+      imgElement.src = base64image;
+      imgElement.width = 640;
+      
+      const imgOutPreview = document.getElementById("img-out-preview");
+      imgOutPreview.innerHTML = "";
+      imgOutPreview.appendChild(imgElement);
 
-      $imgDiv[0].onload = () => {
-        $("#gen-img-size-label").text(
-          "image dimensions = " +
-            $imgDiv[0].width +
+      imgElement.onload = () => {
+        const genImgSizeLabel = document.getElementById("gen-img-size-label");
+        if (genImgSizeLabel) {
+          genImgSizeLabel.textContent = 
+            "image dimensions = " +
+            imgElement.width +
             "px, " +
-            $imgDiv[0].height +
-            "px"
-        );
+            imgElement.height +
+            "px";
+        }
       };
 
       setTimeout(() => {
         window.scrollBy(0, 500);
       }, 250);
-
-      // resizeImage(base64image, 298);
-      // var win = window.open('', "_blank");
-      // win.document.write('<img src="' + base64image + '"/>');
-      // win.document.close();
     });
   });
 });
