@@ -6,8 +6,8 @@ html {
   padding: 0;
 }
 body {
-  background-color: #ddd;
-  background-image: url(../img/alum.png);
+  background-color: #f0f0f0;
+  background-image: linear-gradient(45deg, #f8f8f8 0%, #e8e8e8 100%);
 }
 ::-moz-selection {
   background: transparent;
@@ -19,7 +19,15 @@ body {
 }
 .night {
   background-color: #222;
-  background-image: url(../img/alum-night.png);
+  background-image: linear-gradient(45deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.night #keyboard {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+  border: 1px solid #1a1a1a;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 #main {
   width: 1231px;
@@ -32,8 +40,12 @@ body {
   height: 420px;
   padding: 16px 0 0 16px;
   margin: 0;
-  background-repeat: no-repeat;
-  background-position: 0 -220px;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  border-radius: 12px;
+  border: 1px solid #d0d0d0;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   list-style-type: none;
   z-index: 5;
   position: relative;
@@ -52,32 +64,44 @@ li,
   float: left;
   position: relative;
   margin: 0 12px 12px 0;
-  background-color: #000;
-  color: #fff;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #d1d1d1 100%);
+  border: 1px solid #c0c0c0;
+  color: #333;
   text-align: center;
   font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
   font-size: 24px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 li:active,
 .key:active {
-  top: 2px;
-  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+  top: 1px;
+  background: linear-gradient(135deg, #e0e0e0 0%, #d3d3d3 50%, #c0c0c0 100%);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 .night li,
 .night .key {
-  box-shadow:   0    1px 0   rgba(255, 255, 255, .6),
-                0    1px 4px rgba(255, 255, 255, .3);
-  text-shadow:  2px  2px 3px rgba(255, 255, 255, .4),
-               -2px  2px 3px rgba(255, 255, 255, .4),
-                2px -2px 3px rgba(255, 255, 255, .4),
-               -2px -2px 3px rgba(255, 255, 255, .4);
+  background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 50%, #2a2a2a 100%);
+  border: 1px solid #1a1a1a;
+  color: #e0e0e0;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 .night li:active,
 .night .key:active {
-  box-shadow:   0    0px 0   rgba(255, 255, 255, .6),
-                0    0px 4px rgba(255, 255, 255, .3);
+  background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 ol li span {
   display: block;
@@ -162,7 +186,13 @@ ol li span {
 }
 
 .pressed {
-  background-color: #5b50f1;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2968a3 100%);
+  color: #fff;
+  border: 1px solid #2968a3;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 #lightswitch {
